@@ -1,0 +1,15 @@
+#twoSelect {
+	width: auto;
+	height: 150px;
+	margin: 0 auto; 
+	border: 1px #ccc solid;
+	text-align: left;
+}
+
+#oneSelect {
+	width: auto;
+	height: 150px;
+	margin: 0 auto; 
+	border: 1px #ccc solid;
+	text-align: left;
+}

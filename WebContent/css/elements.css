@@ -1,0 +1,41 @@
+#head {
+	width: auto;
+	height: 100px;
+	Vertical-align:bottom;
+	padding-top: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 15px;
+	margin-bottom: 5px;
+	background-color: #00ffff;
+}
+
+#title {
+	color: #000000;
+}
+
+.contents{
+	text-align: right;
+}
+
+.contents2{
+	text-decoration: none;
+	background-color: #f5fffa;
+	border-color: #ff0000;
+	border-style: solid;
+	border-width: 0.5px;
+}
+
+#foot {
+	width: auto;
+	height: 40px;
+	padding: 2px;
+	margin: 2px;
+	position: relative;
+}
+
+#foot p {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
