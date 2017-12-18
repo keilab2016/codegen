@@ -19,8 +19,8 @@ public class InitializationListener implements ServletContextListener {
 		ServletContext application = arg0.getServletContext();
 		Path path = (Path) application.getAttribute("path");
 		String p = arg0.getServletContext().getRealPath("");
-		path = new Path(p+"WEB-INF/models", p+"workspace", p+"generated", 
-				p+"WEB-INF/cakephp.zip", p+"WEB-INF/database.php");
+		path = new Path(p+"/WEB-INF/models", p+"/workspace", p+"/generated", 
+				p+"/WEB-INF/cakephp.zip", p+"/WEB-INF/database.php");
 		application.setAttribute("path", path);
 		File models = new File(path.getModels());
 		if(!models.exists()) models.mkdir();
