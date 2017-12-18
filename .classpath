@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.8.0_131">
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/Java SE 8 [1.8.0_25]">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
@@ -13,12 +13,12 @@
 	</classpathentry>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="var" path="ASTAH/astah-api.jar"/>
-	<classpathentry kind="var" path="ASTAH/astah-pro.jar"/>
-	<classpathentry kind="var" path="ASTAH/lib/slf4j-api-1.6.6.jar"/>
-	<classpathentry kind="var" path="ASTAH/lib/logback-loader-1.0.9b.jar"/>
-	<classpathentry kind="var" path="COMMONS_FILEUPLOAD/commons-fileupload-1.3.3.jar"/>
-	<classpathentry kind="var" path="COMMONS_IO/commons-io-2.6.jar"/>
-	<classpathentry kind="var" path="COMMONS_LANG/commons-lang3-3.7.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/commons-fileupload-1.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/commons-io-2.4.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/astah-api.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/astah-pro.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/logback-loader-1.0.9b.jar"/>
+	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/slf4j-api-1.6.6.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-lang3-3.4.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
