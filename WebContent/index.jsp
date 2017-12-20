@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="util.GenerateRandom" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -41,10 +42,10 @@
 		<input type="radio" id="geneWay3" name="geneWay" value="c4sa">C4SA用プロジェクト全部入り
 		<br><br>
 		<label for="secuSalt">ランダムな文字列を入力してください(半角英数字、20〜50文字程)：</label>
-		<input type="text" id="secuSalt" name="secuSalt" />
+		<input type="text" id="secuSalt" name="secuSalt" value="<%= GenerateRandom.randomText("abcdefghijklmnopqrstuvwxyz", 32) %>"/>
 		<br>
 		<label for="ciphSeed">ランダムな数字を入力してください(半角数字、20〜50文字程)：</label>
-		<input type="text" id="ciphSeed" name="ciphSeed" />
+		<input type="text" id="ciphSeed" name="ciphSeed" value="<%= GenerateRandom.randomText("0123456789", 32) %>"/>
 		<br>
 		<label for="apiKey">API_KEYを入力してください(地図機能を使う場合)：</label>
 		<input type="text" id="apiKey" name="apiKey" />
