@@ -38,7 +38,7 @@
 		<sub><span style="cursor: pointer" onclick="popup('question.html')"><img border="0" src="img/question.png" width="15px" height="15px"></span></sub>
 		：</label>
 		<input type="radio" id="geneWay1" name="geneWay" value="simple">MVCコードのみ
-		<input type="radio" id="geneWay2" name="geneWay" value="full">CakePHPプロジェクト全部入り
+		<input type="radio" id="geneWay2" name="geneWay" value="full" checked>CakePHPプロジェクト全部入り
 		<input type="radio" id="geneWay3" name="geneWay" value="c4sa">C4SA用プロジェクト全部入り
 		<br><br>
 		<label for="secuSalt">ランダムな文字列を入力してください(半角英数字、20〜50文字程)：</label>
