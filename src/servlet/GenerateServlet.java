@@ -54,6 +54,7 @@ public class GenerateServlet extends HttpServlet {
 		//アプリケーションスコープからPathインスタンスを取得
 		ServletContext application = this.getServletContext();
 		Path path = (Path) application.getAttribute("path");
+		//Path path = new Path(application);
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
 		String id = RandomStringUtils.randomAlphabetic(5) + sdf.format(new Date()); //ランダムなidを割り振る
@@ -90,7 +91,9 @@ public class GenerateServlet extends HttpServlet {
 								dataName = item.getName();
 								form.setSTName(stName);
 								form.setDataName(dataName);
-								item.write(new File(path.getModels() + "/" + id + "/" + stName));
+								String outputfilename = path.getModels() + "/" + id + "/" + stName;
+								System.out.println(outputfilename);
+								item.write(new File(outputfilename));
 							}
 							break;
 					}
@@ -113,6 +116,7 @@ public class GenerateServlet extends HttpServlet {
 			}
 		} catch (Exception e) {
 			response.getWriter().write("フォームの読み込みに失敗");
+			e.printStackTrace();
 			return;
 		}
 		
