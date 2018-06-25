@@ -2,6 +2,8 @@ package model;
 
 import java.io.Serializable;
 
+import javax.servlet.ServletContext;
+
 /*
  * パス情報格納クラス
  */
@@ -14,6 +16,15 @@ public class Path implements Serializable {
 	private String dbphp; //database.phpファイルのパス
 
 	public Path(){};
+	/*
+	public Path(ServletContext context) {
+		this.models = context.getRealPath("/WEB-INF/models");
+		this.workspace = context.getRealPath("/workspace");
+		this.generated = context.getRealPath("/generated");
+		this.cakezip = context.getRealPath("/WEB-INF/cakephp.zip");
+		this.dbphp = context.getRealPath("/WEB-INF/database.php");
+	}
+	*/
 	public Path(String models, String workspace, String generated, String cakezip, String dbphp) {
 		this.models = models;
 		this.workspace = workspace;
