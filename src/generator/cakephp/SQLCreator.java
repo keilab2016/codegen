@@ -1,7 +1,6 @@
 package generator.cakephp;
 
-import java.io.File;
-import java.io.FileWriter;
+import java.io.*;
 
 import loder.astah.DataDiagram;
 import loder.astah.Table;
@@ -35,9 +34,9 @@ public class SQLCreator {
 			text += write(table);
 		}
 		try {
-			FileWriter fw = new FileWriter(file);
-			fw.write(text);
-			fw.close();
+			BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "UTF-8"));
+			out.write(text);
+			out.close();
 		}catch(Exception e) {
 			return false;
 		}
