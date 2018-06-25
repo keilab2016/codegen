@@ -1,9 +1,6 @@
 package model;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.BufferedInputStream;
-import java.io.File;
+import java.io.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -77,12 +74,20 @@ public class ZipCompressor {
 		} else {
 			ZipEntry entry = new ZipEntry(hrc + path.getName().replace("\\", "/"));
 			zo.putNextEntry(entry);
-			byte buf[] = new byte[1024];
+			byte buf[] = new byte[4096];
+			BufferedReader in = new BufferedReader(new FileReader(path));
+			String s = null;
+			while ((s = in.readLine()) != null) {
+				buf = s.getBytes("UTF-8");
+				zo.write(buf, 0, buf.length);
+			}
+			/*
 			int size;
 			BufferedInputStream in = new BufferedInputStream(new FileInputStream(path.getPath()));
 			while ((size = in.read(buf, 0, 1024)) != -1) {
 				zo.write(buf, 0, size);
 			}
+			*/
 			zo.closeEntry();
 			in.close();
 		}
