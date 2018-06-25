@@ -78,7 +78,7 @@ public class ZipCompressor {
 			BufferedReader in = new BufferedReader(new FileReader(path));
 			String s = null;
 			while ((s = in.readLine()) != null) {
-				buf = s.getBytes("UTF-8");
+				buf = (s+"\n").getBytes("UTF-8");
 				zo.write(buf, 0, buf.length);
 			}
 			/*
