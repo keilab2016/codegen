@@ -51,6 +51,7 @@ public class SQLCreator {
 	 */
 	private String write(Table table) {
 		String text = "";
+		text += "DROP TABLE IF EXISTS " + table.getName() + ";\n";	
 		text += "CREATE TABLE " + table.getName() + "(\n";	
 		for(Column column : table.getColumns()) {
 			if(column.getName().equals("id")) {
