@@ -23,6 +23,7 @@ public class STDiagram extends Diagram {
 	 */
 	public STDiagram(String filePath) {
 		super(filePath);
+		//System.out.println("STDiagram(" + filePath + ")");
 		screens = new ArrayList<Screen>();
 		try{
 			loadSTDiagram();
@@ -65,7 +66,9 @@ public class STDiagram extends Diagram {
 		IVertex[] vertexs = stateMachine.getVertexes();
 		//int number = 0; //テーブル名が存在しなかった場合のページ番号
 		for(IVertex vertex : vertexs) {
+			//System.out.println("setScreens:" + vertex.getName());
 			if(vertex.getName().contains("開始疑似状態")) continue; //開始疑似状態を省く
+			if(vertex.getName().contains("開始擬似状態")) continue; //開始擬似状態を省く
 			if(vertex instanceof IFinalState) continue; //終了擬似状態を省く
 			String tableName = vertex.getDefinition();
 			tableName = tableName.replaceAll(" ", "");
@@ -86,7 +89,9 @@ public class STDiagram extends Diagram {
 		ITransition[] outGo = vertex.getOutgoings(); //する遷移
 		for(ITransition transition : inComes) { 
 			screen.newTransition(transition.getSource().getName(), transition.getName(), true);
+			//System.out.println("setTransition:" + transition.getSource().getName());
 			if(transition.getSource().getName().contains("開始疑似状態")) screen.setTopPage();
+			else if(transition.getSource().getName().contains("開始擬似状態")) screen.setTopPage();
 		}
 		for(ITransition transition : outGo) {
 			screen.newTransition(transition.getTarget().getName(), transition.getName(), false);
