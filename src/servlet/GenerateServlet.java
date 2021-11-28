@@ -74,6 +74,7 @@ public class GenerateServlet extends HttpServlet {
 						case "stDiagram":
 							if(!item.getName().equals("") && item.getName() != null) {
 								stName = item.getName();
+								stName = stName.substring(stName.lastIndexOf(File.separatorChar)+1);
 								form.setSTName(stName);
 								item.write(new File(path.getModels() + "/" + id + "/" + stName));
 							}
@@ -81,6 +82,7 @@ public class GenerateServlet extends HttpServlet {
 						case "dataDiagram":
 							if(!item.getName().equals("") && item.getName() != null) {
 								dataName = item.getName();
+								dataName = dataName.substring(dataName.lastIndexOf(File.separatorChar)+1);
 								form.setDataName(dataName);
 								item.write(new File(path.getModels() + "/" + id + "/" + dataName));
 							}
@@ -88,7 +90,8 @@ public class GenerateServlet extends HttpServlet {
 						case "diagram":
 							if(!item.getName().equals("") && item.getName() != null) {
 								stName = item.getName();
-								dataName = item.getName();
+								stName = stName.substring(stName.lastIndexOf(File.separatorChar)+1);
+								dataName = stName;
 								form.setSTName(stName);
 								form.setDataName(dataName);
 								String outputfilename = path.getModels() + "/" + id + "/" + stName;
